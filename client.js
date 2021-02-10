@@ -6,12 +6,12 @@ const connect = function() {
     port: 50542
   });
   conn.setEncoding('utf8');               // interpret data in a text format
-  conn.on('connect', () => {
-    conn.write('Name: RJF');
-    setTimeout(() => {
-      conn.write('Move: up')}, 1000);
-    setTimeout(() => {
-      conn.write('Move: up')}, 2000);
+  conn.on('connect', () => {              // do these things once connected 
+    conn.write('Name: RJF');              // send this data to the server
+    // setTimeout(() => {
+    //   conn.write('Move: up')}, 1000);
+    // setTimeout(() => {
+    //   conn.write('Move: up')}, 2000);
     console.log('Successfully connected to game server')
   })
   conn.on('data', (data) => {
@@ -20,5 +20,6 @@ const connect = function() {
   });
   return conn;
 };
+
 
 module.exports = { connect };
