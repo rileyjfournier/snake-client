@@ -8,10 +8,6 @@ const connect = function() {
   conn.setEncoding('utf8');               // interpret data in a text format
   conn.on('connect', () => {              // do these things once connected 
     conn.write('Name: RJF');              // send this data to the server
-    // setTimeout(() => {
-    //   conn.write('Move: up')}, 1000);
-    // setTimeout(() => {
-    //   conn.write('Move: up')}, 2000);
     console.log('Successfully connected to game server')
   })
   conn.on('data', (data) => {
